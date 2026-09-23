@@ -1,12 +1,33 @@
 /* TODO
-[ ] fix overlap on .heading h1 and p when the window shrinks
-[ ] change the landing page from flex to grid
-[ ] apply an overflow function to the landing page (after grids have been implemented)
-[ ] figure out why the heading links won't cooperate
-[ ] correct landing page image alignment
-[ ] layer landing page text in between border ---like this---
-[ ] favicon
-[ ] figure out why figures break images in the landing page*/
+[ ] find someone to look this over and provide feedback
+[X] fix overlap on .heading h1 and p when the window shrinks
+[X] change the landing page from flex to grid
+  [X] change content pages from flex to grid
+[X] apply an overflow function to the landing page (after grids have been implemented)
+[X] figure out why the heading links won't cooperate
+[X] correct landing page image alignment
+[ ] force footer to stick to the bottom of the page no matter content length
+    [ ] restyle footer buttons
+[X] a better overflow for the header
+    [ ] force scroll on header content height when window changes size
+    [ ] force fit on header content width when window changes size
+    [ ] make sure this is reflected in media queries
+[X] border for each landing grid column
+[ ] convert recent box into a feed
+    [ ] implement widgets and previews
+    [ ] see if it's possible to convert this into auto behavior ^^
+    [ ] div box of its own? 
+[ ] center images in landing page boxes
+    [X] figure out why figures break images in the landing page
+    [ ] resize images in landing page boxes when window changes size
+[ ] update media queries
+[ ] implement container queries
+[ ] visually interesting
+      [ ] favicon
+      [ ] layer landing page box titles in between border ---like this---
+      [ ] add border and unique header color
+      [ ] center sticky smaller image in the header that acts as a popup nav sidebar thing 
+      [ ] look at more sites for layout ideas */
 
 /* general */
 
@@ -14,19 +35,11 @@ body {
   background-color: #dae0d9;
 }
 
-img {
-  padding: 2px;
-  border: 1px;
-  margin: 15px;
-  border: solid 2px #426d6f;
-  padding: 1rem;
-}
-
 p, ul {
   margin: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: .9em;
   color: #253531;
 }
 
@@ -36,28 +49,36 @@ span {
   text-decoration: underline;
 }
 
+img {
+  margin: 1em;
+  padding: 1em;
+  border: solid 1px #253531;
+}
+
 /* heading */
 
 .heading {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  flex-shrink: 3;
-  align-content: flex-start;
-  background-color: #dde9e9;
-  gap: 25px;
-  margin: 0 auto;
-  padding: 1em 1em;
-  border-bottom: solid 2px #426d6f;
-  border-right: solid 2px #426d6f;
+  display: grid;
+  grid-template-columns: 20% 50% 20% (auto-fill, minmax(1fr));
+  grid-auto-flow: column;
+  margin: .5em;
+  padding: 1em .5em;
+  gap: 3em;
+  justify-self: stretch;
+  align-self: center;
+  max-width: 40% 40%;
+  max-height: fit-content(30%);
+  overflow-y: scroll;
+  overflow-x: scroll;
+}
+
+.heading img {
+  position: relative;
 }
 
 .heading h1 {
   position: absolute;
-  z-index: 1;
-  padding: 1rem 5rem;
+  z-index: 4;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: oblique;
   background-color: #426d6f;
@@ -65,72 +86,58 @@ span {
   border: solid 2px #dde9e7;
 }
 
-.heading img {
-  position: relative;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  margin: 0 auto;
-  padding: 1em 1em;
-}
-
 .heading p {
-  box-sizing: border-box;
   position: relative;
-  z-index: 1;
-  justify-content: flex-start;
-  align-self: flex-start;
-  width: 50%;
-  margin: 0 auto;
-  padding: .5% 1% .5% 1%;
+  box-sizing: border-box;
   font-size: .9rem;
   color: #263834;
 }
 
-.heading a {
-  position: relative;
-  z-index: 1;
-  margin: 0 auto 5%;
-  padding: 1rem 5rem;
-  font-size: 1em;
+.heading a:link {
+  font-size: 1.5em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #426d6f;
 }
 
-/* sidebar */
-
-.sidebar {
-  z-index: 20;
-  position: sticky;
-  top: 0px;
-  left: 0px;
-  align-self: auto;
-  margin: .5em .5em;
-  font-size: 1em;
-  width: 100px;
-  height: 200px;
-  flex-wrap: wrap;
-  flex-shrink: 3;
-  border-top: solid 2px #8c9e97;
-  border-left: solid 2px #8c9e97;
-  color: #263834;
+  .heading a:hover {
+  color: #728984;
+  text-decoration: underline;
 }
 
-/* landing page */
+/* footer */
+
+.footing {
+  display: flex;
+  position: sticky;
+  bottom: 0%;
+  align-self: auto;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #dde9e9;
+  padding: .2em;
+  border-top: solid 2px #426d6f;
+  border-left: solid 2px #426d6f;
+}
+
+/* landing */
 
 .landing {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 2em;
-  width: 90%;
-  height: 90%;
-  margin: -10em 5% 5%;
-  box-sizing: border-box;
-  flex-shrink: 3;
-  padding: 1rem;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  max-width: 40% 40%;
+  max-height: 60% 60%;
   overflow-y: scroll;
+  overflow-x: scroll;
+  grid-auto-flow: column;
+  margin: .5em;
+  padding: 1em .5em;
+  gap: 3em;
+  justify-self: stretch;
+  justify-content: center;
+  align-self: center;
+  box-sizing: content-box;
 }
 
 .landing p, ul {
@@ -143,73 +150,39 @@ span {
   color: #263834;
 }
 
-.landing h2 {
-  position: relative;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #263834;
-}
-
 .landing img {
-  justify-self: flex-start;
-  padding: 2px;
-  border: 1px;
-  margin: 15px;
-  border: solid 1px #426d6f;
-  padding: 1rem;
-}
-
-/* footing */
-
-.footing {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  flex-grow: 5;
+  overflow: scroll;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: 1em .5em;
+  justify-self: stretch;
   justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  background-color: #dde9e9;
-  padding: .2em;
-  border-top: solid 2px #426d6f;
-  border-left: solid 2px #426d6f;
+  align-self: center;
 }
 
-.footing a {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15px;
-  color: #263834;
-  border: 1px solid #426d6f;
-  padding: .3rem;
-}
-
-.footing a:hover {
-  color: #728984;
-  text-decoration: underline;
-}
-
-/* main content */
+/* main */
 
 .main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-column: auto;
   justify-content: center;
   align-items: center;
   width: 90%;
   height: 90%;
-  margin: -10em 5% 5%;
+  margin: 1em auto;
   box-sizing: content-box;
-  flex-wrap: wrap;
-  flex-shrink: 3;
 }
 
 .main h2 {
   position: relative;
+  margin-top: auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #426d6f;
 }
 
 figure, figcaption {
-  font-size: 13px;
+  font-size: .9rem;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-style: italic;
   display: flex;
@@ -221,7 +194,6 @@ figure, figcaption {
 
 a:link {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 15px;
   text-decoration: none;
   color: #263834;
 }
@@ -229,4 +201,34 @@ a:link {
 a:hover {
   color: #728984;
   text-decoration: underline;
+}
+
+/* media query: mobile */
+
+@media screen and (min-width: 250px) and (max-width:480px) {
+  .heading .footing .landing .main {
+    grid-template-columns: repeat (1, 1fr);
+    overflow-y: auto;
+    max-height: fit-content(30%);
+  }
+}
+
+/* media query: tablet */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .heading .footing .landing .main {
+    grid-template-columns: repeat (3, 1fr);
+    overflow-y: auto;
+    max-height: fit-content(30%);
+  }
+}
+
+/* media query: laptop */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .heading .footing .landing .main {
+    grid-template-columns: repeat (4, 1fr);
+    overflow-y: auto;
+    max-height: fit-content(30%);
+  }
 }
