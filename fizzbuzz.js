@@ -1,6 +1,6 @@
 /* Blair
-/* fizzBuzz.js
-/* 09/23/26 */
+fizzBuzz.js
+09/23/26 */
 
 function fizzBuzz (quo) {
     for (let num = 1; num <= quo; num++) {
