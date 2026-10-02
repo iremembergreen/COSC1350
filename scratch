@@ -1,0 +1,63 @@
+  margin: .7rem;
+  padding: 1em .5em;
+  gap: 3em;
+  justify-self: center;
+  align-self: center;
+  max-width: 40% 40%;
+  max-height: fit-content(30%);
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  .calculator label {
+  position: relative;
+  
+  
+  padding: 10px 20px;
+  font-size: 15px;
+
+}
+
+  grid-template-columns: 20% 20% 20% (auto-fill, minmax(1fr));
+  grid-auto-flow: column;
+  margin: auto;
+  padding: 1em;
+  gap: 2em;
+  justify-self: center;
+  align-items: center;
+  align-self: center;
+  max-width: 80%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+
+  .calculator input {
+  position: relative;
+  margin: .5em;
+  width: 15rem;
+  padding: .5em;
+  background-color: #dde9e7;
+  border: 3px;
+  border-radius: 30px;
+  font-size: 90%;
+}
+
+
+labels 
+.service label {
+  position: absolute;
+  float: left;
+  padding: 10px 20px;
+  margin: -2em 1em;
+  color: #263834;
+  font-style: oblique;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.feedback label {
+  position: absolute;
+  float: left;
+  padding: 10px 20px;
+  margin: -2em 1em;
+  color: #263834;
+  font-style: oblique;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

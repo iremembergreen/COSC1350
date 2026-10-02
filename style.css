@@ -8,6 +8,7 @@
 [X] correct landing page image alignment
 [ ] force footer to stick to the bottom of the page no matter content length
     [ ] restyle footer buttons
+    [ ] fix submit button
 [X] a better overflow for the header
     [ ] force scroll on header content height when window changes size
     [ ] force fit on header content width when window changes size
@@ -27,7 +28,8 @@
       [ ] layer landing page box titles in between border ---like this---
       [ ] add border and unique header color
       [ ] center sticky smaller image in the header that acts as a popup nav sidebar thing 
-      [ ] look at more sites for layout ideas */
+      [ ] look at more sites for layout ideas 
+      [ ] visual division of content, header, etc */
 
 /* general */
 
@@ -206,7 +208,7 @@ a:hover {
 /* media query: mobile */
 
 @media screen and (min-width: 250px) and (max-width:480px) {
-  .heading .footing .landing .main {
+  .heading .footing .landing .main .calculator {
     grid-template-columns: repeat (1, 1fr);
     overflow-y: auto;
     max-height: fit-content(30%);
@@ -216,7 +218,7 @@ a:hover {
 /* media query: tablet */
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
-  .heading .footing .landing .main {
+  .heading .footing .landing .main .calculator {
     grid-template-columns: repeat (3, 1fr);
     overflow-y: auto;
     max-height: fit-content(30%);
@@ -226,9 +228,80 @@ a:hover {
 /* media query: laptop */
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
-  .heading .footing .landing .main {
+  .heading .footing .landing .main .calculator {
     grid-template-columns: repeat (4, 1fr);
     overflow-y: auto;
     max-height: fit-content(30%);
   }
+}
+
+/* calculator */ 
+
+.calculator form {
+  display: grid;
+  grid-template-columns: 20% 20% 20% (auto-fill, minmax(1fr));
+  grid-auto-flow: column;
+  justify-self: center;
+  align-items: center;
+  align-self: center;
+  max-width: 80%;
+  overflow-y: scroll;
+  overflow-x: scroll;
+  gap: 5%;
+}
+
+.calculator label {
+  position: absolute;
+  float: left;
+  padding: 10px 20px;
+  margin: -2em 1em;
+  color: #263834;
+  font-style: oblique;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.billamt input {
+  position: relative;
+  width: 100%;
+  margin: .5em;
+  padding: .5em;
+  border: 2px solid #8c9e97;
+  border-radius: 30px;
+  color: #263834; 
+  background-color: #dde9e7;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.service select {
+  position: relative;
+  width: 100%;
+  margin: .5em;
+  padding: .5em;
+  border: 2px solid #8c9e97;
+  border-radius: 30px;
+  color: #263834; 
+  background-color: #dde9e7;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.feedback textarea {
+  position: relative;
+  width: 100%;
+  margin: .5em;
+  padding: .5em;
+  border: 2px solid #8c9e97;
+  border-radius: 30px;
+  color: #263834; 
+  background-color: #dde9e7;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  resize: vertical;
+}
+
+.calculator button {
+  position: relative;
+  padding: 10px 20px;
+  margin: -2em 1em;
+  color: #263834;
+  font-style: oblique;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

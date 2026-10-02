@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>COSC 1350</title>
     <link rel="stylesheet" href="style.css">
+    <script src="calculator.js" async></script>
 </head>
 <body>
     <header>
@@ -23,21 +24,30 @@
     </div>
 
 <main>
-    <div class="landing">
-        <div>
-        <p><span>09 10 26</span>
-            <br>
-            Eventually this will display previews of articles, project updates, and blog posts, added automatically in chronological order. The date above would link to the full page.</p>
-        <p><span>09 10 26</span>
-            There has only been six known total Spinosaurus fossils that provide us with a picture of what it may have looked like. Most fossils have been largely incomplete and only two species have been identified - the original holotype was destroyed in WW2. The newest species discovered this year has a bladed horn on the top of its head, which builds on the theory that the Spinosaurus was closer to a wading bird in niche and behavior. The crest likely functioned as a massive billboard for other species and its own - look at me! I went to bed thinking about wading birds that night and Spinosauri (?) resembling the Roseate Spoonbill and Scarlet Ibis, then dreamt Ian Malcolm leaned over to me and told me raptors evolved into spiders and I got so angry at the idea that I woke up.</p>
+    <div class ="main"><h2>Tip Calculator</h2><br></div>
+    <div class ="calculator">
+    <form action="" id="tipCalc" method="get" onsubmit="sConsole(event)">
+        <div class="billamt">
+             <label for="Bill Amount">Bill Amount</label><br>
+            <input type="number" id="billamt" name="billamnt" placeholder="000.00" required/>
         </div>
-        <div><p>If I have something really impressive or major to show off or direct people to, it would go here. I would have liked to create a new page and link to it, but frankly after troubleshooting why the sticky sidebar wouldn't function for over an hour (an unclosed bracket), running into issues with GlueOPS (empty index page) and the internet going out for nearly two days has made me sick of this and I just want to submit this already. Here's an image to test how the container will respond. I love finding how many different ways this site has been slowly breaking on me. Adding anything around or underneath an image distorts it. Probably because I've been avoiding using grid boxes. The to do list for this site has less to do with what I actually want to implement and more to do with what I need to troubleshoot, fix, and adjust. Now why is this happening? My nightmare mines assignment.
-        <img src="images\eraserhead_baby.png"
-            alt="A white seal pup lying on its back. The figure resembles eraser head baby."
-            height="532"
-            width="299">
-        </p>
+
+        <div class="service">
+        <label for="Service">Service</label><br>
+        <select id="service" name="service" required><br>
+            <option value="excellent">Excellent (25%)</option>
+            <option value="good">Good (20%)</option>
+            <option value="fair">Fair (15%)</option>
+            <option value="poor">Poor (10%)</option>
+        </select>
         </div>
+
+        <div class="feedback">
+        <label for="Feedback">Feedback</label><br>
+        <textarea id="feedback" name="feedback" placeholder="Service Feedback max 500 " rows="3" cols="25" maxlength="500"></textarea><br>
+        </div>
+    <button type="submit">Submit</button>
+    </form>
     </div>
 </main>
 
