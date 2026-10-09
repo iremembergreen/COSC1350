@@ -4,62 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>COSC 1350</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="calculator.js" async></script>
+    <link rel="stylesheet" href="calculatorstyle.css">
 </head>
 <body>
-    <header>
-    <div class="heading">
-    <div>
-        <h1>BLAIR</h1>
-        <img
-        src="images\yup_face.png"
-        alt="A grey and white ringed seal is lying on the ground with the impression of unfocused eyes and a pleasant smile."
-        width="300"
-        height="299"/></div>
-    <div><p>I've been messing around with HTML and CSS for over ten years now as well as very mild video game modding (and modding mods!) and involvement with FOSS communities, Linux more recently. I write, on and off, and lately have been taking up Blender; you'll probably notice I tend to pick skills that drive people to the brink of insanity There's nothing of major interest to show off at the moment, but in the future I'd like to use all of these towards reviving in-browser interactive fiction with point and click elements. Old point and click games - especially the weirder ones like The Dark Eye and Planet Laika - have always had a pretty major foothold in my brain. With how accessible JS is these days, there's no reason why these can't see some kind of renaissance. Not only that, but despite the popularity of virtual pet games back in the day and people frequently saying they wish Neopets would come back, there isn't really much out there at the moment. Unless you want to go down the mobile free to play route. And why not use the basis of point and click interactive fiction and virtual pets for more practical purposes? There's absolutely grounds for creating museum-like resources online, especially in the age of AI misinformation and perpetual lack of public interest in scientific fields.</p></div>
-    <div><a href ="inspiration.html">INSPIRATIONS</a></div>
-    <div><a href ="calculator.html">CALCULATOR</a></div>
-    </header>  
-    </div>
 
 <main>
-    <div class ="main"><h2>Tip Calculator</h2><br></div>
+    <h1>Tip Calculator</h1>
+
     <div class ="calculator">
-    <form action="" id="tipCalc" method="get" onsubmit="sConsole(event)">
+    <form action="" id="tipCalc" method="get" onsubmit="tipCalc(event)" onsubmit="return tipCalc()">
         <div class="billamt">
-             <label for="Bill Amount">Bill Amount</label><br>
-            <input type="number" id="billamt" name="billamnt" placeholder="000.00" required/>
-        </div>
+            <label for="Bill Amount">Bill Amount</label><br>
+            <input type="number" step="0.01" id="billamt" name="billamnt" placeholder="000.00" required/>
+        </div><br>
 
         <div class="service">
-        <label for="Service">Service</label><br>
-        <select id="service" name="service" required><br>
-            <option value="excellent">Excellent (25%)</option>
-            <option value="good">Good (20%)</option>
-            <option value="fair">Fair (15%)</option>
-            <option value="poor">Poor (10%)</option>
-        </select>
-        </div>
+            <label for="Service">Service</label><br>
+            <select id="service" name="service" required><br>
+                <option value="excellent">Excellent (25%)</option>
+                <option value="good">Good (20%)</option>
+                <option value="fair">Fair (15%)</option>
+                <option value="poor">Poor (10%)</option>
+            </select>
+        </div><br>
 
-        <div class="feedback">
-        <label for="Feedback">Feedback</label><br>
-        <textarea id="feedback" name="feedback" placeholder="Service Feedback max 500 " rows="3" cols="25" maxlength="500"></textarea><br>
+        <button type="submit">Submit</button>
+    </form><br>
+    
+    <div class="output">
+        <output form="tipCalc" id="output" name="output" for="billamt+service">
+            <label for="tip">Tip</label>
+            <p id="tipAmt">0</p>
+            <label for="totalBill">Total Bill</label>
+            <p id="totalBill">0</p></output>
         </div>
-    <button type="submit">Submit</button>
-    </form>
-    </div>
-</main>
-
-<footer>
-<div class="footing">
-    <p><a href="mailto:blairhuxtable@westernwyoming.edu">Contact Me?</a></p>
-    <p><a href="mailto:blairhuxtable@westernwyoming.edu">Contact Me?</a></p>
-    <p><a href="mailto:blairhuxtable@westernwyoming.edu">Contact Me?</a></p>
-    <p><a href="mailto:blairhuxtable@westernwyoming.edu">Contact Me?</a></p>
-    <p><a href="mailto:blairhuxtable@westernwyoming.edu">Contact Me?</a></p>
-</div>
-</footer>
+        
 </main>
 </body>
+<script src="calculator.js" defer></script>
 </html>

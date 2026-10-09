@@ -235,7 +235,7 @@ a:hover {
   }
 }
 
-/* calculator */ 
+/* calculator
 
 .calculator form {
   display: grid;
@@ -250,39 +250,11 @@ a:hover {
   gap: 5%;
 }
 
-.calculator label {
-  position: absolute;
-  float: left;
-  padding: 10px 20px;
-  margin: -2em 1em;
-  color: #263834;
-  font-style: oblique;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
 
-.billamt input {
-  position: relative;
-  width: 100%;
-  margin: .5em;
-  padding: .5em;
-  border: 2px solid #8c9e97;
-  border-radius: 30px;
-  color: #263834; 
-  background-color: #dde9e7;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
 
-.service select {
-  position: relative;
-  width: 100%;
-  margin: .5em;
-  padding: .5em;
-  border: 2px solid #8c9e97;
-  border-radius: 30px;
-  color: #263834; 
-  background-color: #dde9e7;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+
+
+
 
 .feedback textarea {
   position: relative;
@@ -297,11 +269,3 @@ a:hover {
   resize: vertical;
 }
 
-.calculator button {
-  position: relative;
-  padding: 10px 20px;
-  margin: -2em 1em;
-  color: #263834;
-  font-style: oblique;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}

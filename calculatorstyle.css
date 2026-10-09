@@ -1,0 +1,83 @@
+/* gen */
+
+body {
+  background-color: #dae0d9;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #426d6f;
+}
+
+/* calculator */
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 5rem;
+    grid-template-columns: repeat(2, 20rem);
+    margin: 2% 5%;
+    background-color: rgb(177, 204, 203);
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.billamt input {
+  position: relative;
+  width: 100%;
+  margin: .5em;
+  padding: .5em;
+  border: 2px solid #8c9e97;
+  border-radius: 30px;
+  color: #263834; 
+  background-color: #dde9e7;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.service select {
+  position: relative;
+  width: 100%;
+  margin: .5em;
+  padding: .5em;
+  border: 2px solid #8c9e97;
+  border-radius: 30px;
+  color: #263834; 
+  background-color: #dde9e7;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.calculator button {
+  position: relative;
+  padding: 1em;
+  margin: 1em;
+  color: #263834;
+  font-style: oblique;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#output {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: .5rem .5rem;
+    gap: calc(1em);
+}
+
+#output p {
+    color: #303b39;
+    text-decoration: underline;
+}
