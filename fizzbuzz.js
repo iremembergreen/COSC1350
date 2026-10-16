@@ -16,3 +16,4 @@ function fizzBuzz (quo) {
 }
 
 fizzBuzz(100);
+
