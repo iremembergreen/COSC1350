@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="guessStyle.css">
+</head>
+<body>
+    <h1>Guessing Game</h1>
+    <img src="images\numberseal.png">
+    <br>
+        <p>The seal would like to play a game. It will pick a number between 1 & 100. You will attempt to guess the number in 10 turns or less.</p>
+    <br>
+    <form action="" method="get" id="guessGame" onsubmit="guessNumber(event)" onsubmit="return guessNumber()">
+        <label for="Number Guessing Game">Enter A Guess:</label><br>
+        <input type="number" id="guess" name="guess" placeholder="50" min="1" max="100" required/>
+        <button type="submit" id="submit" name="submit">Submit Guess</button>
+    </form>
+    <br>
+    <p id="seal">
+        lets go.
+    </p>
+    <br>
+    <button action="" onclick="restartGuess()" id="restart" name="restart" onsubmit="restartGuess(event)">Restart</button>
+</body>
+<script src="guessScript.js" defer></script>
+</html>
