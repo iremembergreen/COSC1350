@@ -8,21 +8,21 @@
 </head>
 <body>
     <h1>Guessing Game</h1>
-    <img src="images\numberseal.png">
     <br>
+            <button action="" onclick="restartGuess()" id="restart" name="restart" onsubmit="restartGuess(event)">Restart</button>
         <p>The seal would like to play a game. It will pick a number between 1 & 100. You will attempt to guess the number in 10 turns or less.</p>
     <br>
-    <form action="" method="get" id="guessGame" onsubmit="guessNumber(event)" onsubmit="return guessNumber()">
+    <form action="" method="get" id="guessGame" onsubmit="guessNumber(event)" onsubmit="return guessNumber()" onclick="sealComment(event)">
         <label for="Number Guessing Game">Enter A Guess:</label><br>
         <input type="number" id="guess" name="guess" placeholder="50" min="1" max="100" required/>
         <button type="submit" id="submit" name="submit">Submit Guess</button>
     </form>
     <br>
-    <p id="seal">
-        lets go.
-    </p>
-    <br>
-    <button action="" onclick="restartGuess()" id="restart" name="restart" onsubmit="restartGuess(event)">Restart</button>
+    <p onclick="" id="sealSpeaking">lets go</p>
+        <img id="sealimg" src="images\bald_baby.png"
+    alt="a molting baby seal. the coat is white and the top of its head is grey, looking as if the seal is balding."
+    width="148"
+    height="100">
 </body>
 <script src="guessScript.js" defer></script>
 </html>
