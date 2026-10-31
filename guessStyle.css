@@ -17,6 +17,12 @@ h1 {
     
 }
 
+#numberInput {
+    font-size: 12px;
+    border: none;
+    font-style: bold;
+}
+
 p {
     font-size: 14px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;

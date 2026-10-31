@@ -5,6 +5,11 @@
     let guessAttempt = 0;
     let guessLimit = 10;
 
+    // display prev guess
+
+    function guessHistory() {
+        
+    }
 
     //comments
 
@@ -77,6 +82,7 @@ function guessNumber(event) {
 
     switch(true) {
         case(sealNum === guess): {
+            document.getElementById("numberInput").textContent = 
             document.getElementById("sealSpeaking").textContent = (winComment[randomWinComment])
             document.getElementById("submit").disabled = true;
             break;
@@ -84,18 +90,21 @@ function guessNumber(event) {
     } switch(true) {
         case(sealNum > guess): {
             guessAttempt++;
+            document.getElementById("numberInput").textContent = 
             document.getElementById("sealSpeaking").textContent = (higherComment[randomHigherComment])
             break;
         }
     } switch(true) {
         case(guess > sealNum): {
-            guessAttempt++
+            guessAttempt++;
+            document.getElementById("numberInput").textContent = 
             document.getElementById("sealSpeaking").textContent = (lowerComment[randomLowerComment])
             break;
         }
     };
 
     if (guessAttempt === guessLimit) {
+            document.getElementById("numberInput").textContent = 
             document.getElementById("submit").disabled = true;
             document.getElementById("sealSpeaking").textContent = (loseComment[randomLoseComment])
     };
